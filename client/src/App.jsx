@@ -1,8 +1,13 @@
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, Navigate } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import ProtectedRoute from './Components/ProtectedRoute'
+import Navbar from './Components/Navbar'
+import Builder from './pages/Bulider'
+import Billing from './pages/Billing'
+import axios from 'axios'
+import { Toaster } from 'react-hot-toast'
 
 export const ServerUrl = "http://localhost:8000"
 
@@ -31,6 +36,7 @@ const [loading, setLoading] = useState(true)
 
   return (
     <>
+    <Toaster position="top-right"/>
     <Routes>
 
         <Route path='/login' element={<Login setUser={setUser}/>} />

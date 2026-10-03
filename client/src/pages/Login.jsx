@@ -3,7 +3,7 @@ import { useState } from "react";
 import { HiOutlineSparkles, HiOutlineMicrophone } from "react-icons/hi";
 import { HiArrowUpRight, HiOutlineBolt, HiOutlineCodeBracket } from "react-icons/hi2";
 import { FcGoogle } from "react-icons/fc";
-import logo from "/logo.png";
+import logo from "../assets/logo.png";
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../utils/firebase';
 import axios from "axios"
