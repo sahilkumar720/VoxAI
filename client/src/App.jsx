@@ -10,6 +10,8 @@ import axios from 'axios'
 import { Toaster } from 'react-hot-toast'
 
 export const ServerUrl = "http://localhost:8000"
+export const CLIENT_URL = "http://localhost:5173"
+
 
 const App = () => {
 
