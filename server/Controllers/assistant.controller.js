@@ -1,6 +1,7 @@
 import { generateGeminiResponse } from "../Configs/gemini.js"
 import User from "../Models/user.model.js"
 
+// get assistant config
 
 export const getAssistantConfig = async (req, res) => {
     try {
@@ -18,6 +19,7 @@ export const getAssistantConfig = async (req, res) => {
     }
 }
 
+// ask assistant
 
 export const askAssistant = async (req, res) => {
     try {
