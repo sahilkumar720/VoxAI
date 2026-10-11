@@ -1,4 +1,4 @@
-import { generateGeminiResponse } from "../Configs/gemini.js"
+import { generateGeminiResponse } from "../Config/gemini.js"
 import User from "../Models/user.model.js"
 
 // get assistant config
