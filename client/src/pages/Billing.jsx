@@ -1,5 +1,4 @@
 import axios from 'axios';
-import React from 'react'
 import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
@@ -60,7 +59,7 @@ function Billing({ user ,setUser}) {
           order.currency,
 
         name:
-          "ShifraAI",
+          "VoxAI",
 
         description:
           "Pro Plan",

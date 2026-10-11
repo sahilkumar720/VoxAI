@@ -6,6 +6,7 @@ import userRouter from "./Routes/user.route.js"
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import assistantRouter from "./Routes/assistant.route.js";
+import billingRouter from "./Routes/billing.route.js";
 
 dotenv.config();
 
@@ -40,7 +41,10 @@ app.get("/", (req, res)=>{
 
 app.use("/api/auth",privateCors , authRouter)
 app.use("/api/user",privateCors , userRouter)
+app.use("/api/billing",privateCors, billingRouter)
+
 app.use("/api/assistant",publicCors, assistantRouter)
+
 
 
 const PORT = process.env.PORT || 5000;
