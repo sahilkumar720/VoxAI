@@ -6,6 +6,7 @@
     const script = document.currentScript;
 
     const userId = script?.dataset?.userId
+    const assetUrl = (file) => new URL(file, script?.src || window.location.href).href
 
     const theme = "dark"
 
@@ -18,7 +19,7 @@
 
     link.rel = "stylesheet"
 
-    link.href = "http://localhost:5173/assistant.css"
+    link.href = assetUrl("assistant.css")
 
     document.head.appendChild(link)
 
@@ -83,7 +84,7 @@
             <button class="shifra-mic">
 
                <img 
-               src="http://localhost:5173/mic.svg"
+               src="${assetUrl("mic.svg")}"
                alt="mic"
                class="shifra-mic-icon"/>
             </button>
@@ -102,7 +103,7 @@
 
     button.innerHTML = `
     <img 
-    src="http://localhost:5173/logo.png"
+    src="${assetUrl("logo.png")}"
     alt="logo"
     />`;
     document.body.appendChild(button)

@@ -79,7 +79,7 @@ function Billing({ user ,setUser}) {
             }
           },
           theme: {
-          color: "#7c3aed",
+          color: "#172b22",
         },
           }
 
@@ -96,30 +96,31 @@ function Billing({ user ,setUser}) {
       }
 
   return (
-    <div className='min-h-screen bg-[#f7f8fc] px-4 py-10'>
+    <div className='min-h-screen bg-[#f2f3ed] px-4 py-8 text-[#17251f] sm:px-6 sm:py-10'>
 
-      <div className='max-w-5xl mx-auto'>
+      <div className='mx-auto max-w-5xl'>
 
         <div className='mb-8'>
-          <h2 className='text-3xl font-bold text-[#081028]'>
+          <p className='mb-2 text-[10px] font-bold tracking-[0.18em] text-[#78905f]'>ACCOUNT OVERVIEW</p>
+          <h2 className='font-[Manrope,sans-serif] text-3xl font-semibold text-[#17251f] sm:text-4xl'>
             Billing & Subscription
           </h2>
-          <p className='text-gray-500 mt-1'>  Manage your AI assistant plan and usage.</p>
+          <p className='mt-2 text-sm text-[#778179]'>Manage your AI assistant plan and usage.</p>
         </div>
 
-        <div className='grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6'>
+        <div className='mt-6 grid grid-cols-1 gap-3 sm:grid-cols-3'>
 
 
-          <div className='bg-white rounded-3xl p-6 border border-gray-100 shadow-sm'>
+          <div className='rounded-lg border border-[#e3e8df] bg-[#fbfbf7] p-5'>
 
-            <p className='text-sm text-gray-400'>Current Plan</p>
-            <h2 className='text-xl font-bold text-[#081028] mt-1 capitalize'>{user?.plan}</h2>
+            <p className='text-xs font-medium text-[#879188]'>Current plan</p>
+            <h2 className='mt-2 text-lg font-bold capitalize text-[#24372b]'>{user?.plan}</h2>
           </div>
 
 
-          <div className='bg-white rounded-3xl p-6 border border-gray-100 shadow-sm'>
+          <div className='rounded-lg border border-[#e3e8df] bg-[#fbfbf7] p-5'>
 
-            <p className='text-sm text-gray-400'>Gemini Status</p>
+            <p className='text-xs font-medium text-[#879188]'>Gemini status</p>
             <h2 className={`text-xl font-bold mt-1 capitalize ${user?.geminiStatus === "active"
               ? "text-emerald-600"
               : user?.geminiStatus === "invalid"
@@ -128,32 +129,34 @@ function Billing({ user ,setUser}) {
               }`}>{user?.geminiStatus}</h2>
           </div>
 
-          <div className='bg-white rounded-3xl p-6 border border-gray-100 shadow-sm'>
+          <div className='rounded-lg border border-[#e3e8df] bg-[#fbfbf7] p-5'>
 
-            <p className='text-sm text-gray-400'>{user?.plan === "free"
+            <p className='text-xs font-medium text-[#879188]'>{user?.plan === "free"
               ? "Messages Left"
               : "Plan Expiry"}</p>
-            <h2 className='text-xl font-bold text-[#081028] mt-1 capitalize'>{user?.plan === "free"
+            <h2 className='mt-2 text-lg font-bold capitalize text-[#24372b]'>{user?.plan === "free"
               ? remainingMessages
               : `${remainingDays} Days`}</h2>
           </div>
         </div>
 
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 mt-10'>
+        <div className='mt-8 grid grid-cols-1 gap-4 md:grid-cols-2'>
 
           {/* free */}
 
-          <div className='bg-white rounded-3xl p-8 border border-gray-100 shadow-sm'>
-            <h2 className="text-2xl font-bold text-[#081028]">
+          <div className='rounded-lg border border-[#e3e8df] bg-[#fbfbf7] p-6 sm:p-7'>
+            <p className='text-[10px] font-bold tracking-[0.16em] text-[#78905f]'>START HERE</p>
+            <h2 className="mt-3 font-[Manrope,sans-serif] text-2xl font-semibold text-[#24372b]">
               Free Plan
             </h2>
 
-            <h3 className="text-5xl font-bold mt-5 text-[#081028]">
+            <h3 className="mt-4 font-[Manrope,sans-serif] text-4xl font-semibold text-[#17251f]">
               ₹0
             </h3>
+            <p className='mt-1 text-xs text-[#879188]'>Forever free</p>
 
-            <ul className="mt-6 space-y-4 text-gray-600">
+            <ul className="mt-6 space-y-3 border-t border-[#e7ebe4] pt-5 text-sm text-[#5f6d63]">
 
               <li>200 AI messages</li>
               <li>Voice assistant</li>
@@ -165,19 +168,21 @@ function Billing({ user ,setUser}) {
           </div>
 {/* 
          Pro */}
-          <div className='rounded-3xl p-8 bg-gradient-to-r from-purple-600 to-emerald-500 text-white shadow-lg'>
+          <div className='relative isolate overflow-hidden rounded-lg bg-[#14271f] p-6 text-white shadow-[0_22px_55px_-35px_rgba(20,39,31,0.75)] sm:p-7'>
+            <div aria-hidden='true' className='pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_92%_0%,rgba(200,243,106,0.2),transparent_40%)]' />
+            <span className='inline-flex rounded-full border border-lime-300/25 bg-lime-300/10 px-3 py-1 text-[9px] font-bold tracking-[0.14em] text-lime-200'>MORE ROOM TO GROW</span>
 
-            <h2 className="text-2xl font-bold text-[#081028]">
+            <h2 className="mt-3 font-[Manrope,sans-serif] text-2xl font-semibold text-white">
               Pro Plan
             </h2>
 
-            <h3 className="text-5xl font-bold mt-5 text-[#081028]">
+            <h3 className="mt-4 font-[Manrope,sans-serif] text-4xl font-semibold text-white">
               ₹699
             </h3>
 
-            <p className='mt-2 opacity-80'>3 Months Access</p>
+            <p className='mt-1 text-xs text-white/55'>3 months access</p>
 
-            <ul className='mt-6 space-y-4 opacity-90'>
+            <ul className='mt-6 space-y-3 border-t border-white/10 pt-5 text-sm text-white/75'>
 
               <li>Unlimited AI messages</li>
               <li>Advanced AI assistant</li>
@@ -190,9 +195,9 @@ function Billing({ user ,setUser}) {
             <button
             onClick={handlePay}
 
-             disabled={user?.plan === "pro"} className={`mt-8 h-14 w-full rounded-2xl font-semibold transition ${user?.plan === "pro"
-                  ? "bg-emerald-200 text-black cursor-default"
-                  : "bg-white text-[#081028] cursor-pointer"
+               disabled={user?.plan === "pro"} className={`mt-7 h-12 w-full rounded-lg font-semibold transition ${user?.plan === "pro"
+                 ? "cursor-default bg-[#d8e9c7] text-[#334c35]"
+                 : "cursor-pointer bg-lime-300 text-[#17251f] hover:bg-lime-200"
                 }`}>
                   {user?.plan === "pro" ? "Active Plan" : "Upgrade Now"}
 
