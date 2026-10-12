@@ -1,131 +1,80 @@
 import React, { useState } from 'react'
-import { CiMicrophoneOn } from "react-icons/ci";
+import { FaMicrophone } from "react-icons/fa";
 const themes = {
   dark: {
-    bg: "bg-[#050816]",
-
-    overlay:
-      "bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.18),transparent_45%)]",
-
-    orb:
-      "from-cyan-400 via-purple-500 to-pink-500",
-
-    cardBorder:
-      "border border-white/10",
-
-    text:
-      "text-white",
-
-    sub:
-      "text-white/65",
-
-    listening:
-      "text-emerald-400",
-
-    wave:
-      "bg-emerald-400",
-
-    button:
-      "from-purple-500 to-violet-400",
-
-    micGlow:
-      "shadow-[0_0_60px_rgba(168,85,247,0.45)]",
+    name: "Grove",
+    swatch: "bg-lime-300",
+    bg: "bg-[#14271f]",
+    overlay: "bg-[radial-gradient(circle_at_50%_22%,rgba(200,243,106,0.15),transparent_48%)]",
+    orb: "from-lime-200 via-lime-400 to-[#6e9657]",
+    ring: "border-lime-200/45",
+    cardBorder: "border border-white/15",
+    text: "text-[#f5f6ee]",
+    sub: "text-white/65",
+    listening: "text-lime-300",
+    wave: "bg-lime-300",
+    button: "from-lime-300 to-[#8faf69]",
+    micGlow: "shadow-[0_0_60px_rgba(200,243,106,0.24)]",
+    selector: "text-white",
+    inactive: "border-white/10 text-white/50 hover:bg-white/10 hover:text-white",
+    active: "border-lime-300/70 bg-lime-300/10 text-lime-200",
   },
 
   light: {
-    bg:
-      "bg-gradient-to-br from-white via-[#f8fafc] to-[#eef6ff]",
-
-    overlay:
-      "bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.14),transparent_45%)]",
-
-    orb:
-      "from-blue-300 via-cyan-300 to-pink-300",
-
-    cardBorder:
-      "border border-[#dbeafe]",
-
-    text:
-      "text-[#081028]",
-
-    sub:
-      "text-[#475569]",
-
-    listening:
-      "text-blue-500",
-
-    wave:
-      "bg-blue-500",
-
-    button:
-      "from-blue-400 to-cyan-400",
-
-    micGlow:
-      "shadow-[0_0_70px_rgba(59,130,246,0.35)]",
+    name: "Daylight",
+    swatch: "bg-[#dce8cd]",
+    bg: "bg-[#f7f8f1]",
+    overlay: "bg-[radial-gradient(circle_at_50%_22%,rgba(119,151,91,0.16),transparent_48%)]",
+    orb: "from-[#dce9cb] via-[#a9c392] to-[#718f62]",
+    ring: "border-[#718f62]/40",
+    cardBorder: "border border-[#dce5d5]",
+    text: "text-[#1b2b21]",
+    sub: "text-[#66756a]",
+    listening: "text-[#607c4d]",
+    wave: "bg-[#789565]",
+    button: "from-[#c8f36a] to-[#8eae70]",
+    micGlow: "shadow-[0_0_60px_rgba(118,153,88,0.25)]",
+    selector: "text-[#33463a]",
+    inactive: "border-[#dce5d5] text-[#718075] hover:bg-white",
+    active: "border-[#718e5d] bg-[#e9f0e1] text-[#354b36]",
   },
 
   glass: {
-    bg:
-      "bg-black/20 backdrop-blur-[45px]",
-
-    overlay:
-      "bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_45%)]",
-
-    orb:
-      "from-cyan-200 via-violet-300 to-fuchsia-300",
-
-    cardBorder:
-      "border border-white/10",
-
-    text:
-      "text-white",
-
-    sub:
-      "text-white/70",
-
-    listening:
-      "text-cyan-200",
-
-    wave:
-      "bg-cyan-200",
-
-    button:
-      "from-cyan-400 to-violet-500",
-
-    micGlow:
-      "shadow-[0_0_70px_rgba(34,211,238,0.35)]",
+    name: "Glass",
+    swatch: "bg-[#9ed7df]",
+    bg: "bg-[#28443b]/90 backdrop-blur-[45px]",
+    overlay: "bg-[radial-gradient(circle_at_50%_22%,rgba(141,216,239,0.19),transparent_48%)]",
+    orb: "from-[#d7f0e9] via-[#9ed7df] to-[#9eb89c]",
+    ring: "border-[#a8e1e5]/45",
+    cardBorder: "border border-white/25",
+    text: "text-white",
+    sub: "text-white/70",
+    listening: "text-[#a8e1e5]",
+    wave: "bg-[#a8e1e5]",
+    button: "from-[#a8e1e5] to-[#9dbd9a]",
+    micGlow: "shadow-[0_0_60px_rgba(141,216,239,0.3)]",
+    selector: "text-white",
+    inactive: "border-white/15 text-white/55 hover:bg-white/10 hover:text-white",
+    active: "border-[#a8e1e5]/70 bg-white/10 text-[#c7f1ec]",
   },
 
   neon: {
-    bg:
-      "bg-[#03120d]",
-
-    overlay:
-      "bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.18),transparent_45%)]",
-
-    orb:
-      "from-emerald-300 via-green-400 to-cyan-400",
-
-    cardBorder:
-      "border border-emerald-400/20",
-
-    text:
-      "text-emerald-50",
-
-    sub:
-      "text-emerald-100/70",
-
-    listening:
-      "text-emerald-300",
-
-    wave:
-      "bg-emerald-300",
-
-    button:
-      "from-emerald-400 to-green-500",
-
-    micGlow:
-      "shadow-[0_0_70px_rgba(16,185,129,0.45)]",
+    name: "Signal",
+    swatch: "bg-[#ff8068]",
+    bg: "bg-[#101b18]",
+    overlay: "bg-[radial-gradient(circle_at_50%_22%,rgba(255,128,104,0.17),transparent_48%)]",
+    orb: "from-[#c8f36a] via-[#9ad36c] to-[#ff8068]",
+    ring: "border-[#ff8068]/50",
+    cardBorder: "border border-lime-300/20",
+    text: "text-[#f4f7e9]",
+    sub: "text-[#d7e3d4]/70",
+    listening: "text-lime-300",
+    wave: "bg-lime-300",
+    button: "from-lime-300 to-[#ff8068]",
+    micGlow: "shadow-[0_0_60px_rgba(200,243,106,0.28)]",
+    selector: "text-white",
+    inactive: "border-white/10 text-white/50 hover:bg-white/10 hover:text-white",
+    active: "border-[#ff8068]/70 bg-[#ff8068]/10 text-[#ffad9c]",
   },
 }
 
@@ -134,104 +83,58 @@ function AssistantPreview() {
     const [theme,setTheme]= useState("dark")
     const current = themes[theme]
   return (
-    <div className='flex items-center justify-center px-3 sm:px-4 py-10 sm:py-14'>
-
-        <div className={`relative w-[280px] h-[450px] sm:w-[330px] sm:h-[500px] md:w-[380px] md:h-[550px] rounded-[32px] sm:rounded-[42px] overflow-hidden transition-all duration-500 ${current.bg} ${current.cardBorder} shadow-[0_20px_80px_rgba(0,0,0,0.28)]`}>
-            <div className={`absolute inset-0 ${current.overlay}`}/>
-
-          <div className='absolute top-4 right-4 sm:top-5 sm:right-5 z-30 flex items-center gap-2'>
-
-            <button onClick={()=>setTheme("dark")} className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#050816] border transition-all cursor-pointer ${
-              theme === "dark"
-                ? "border-purple-400 scale-110"
-                : "border-white/20"
-            }`}/>
-
-            <button
-            onClick={() => setTheme("light")}
-            className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-white border transition-all cursor-pointer ${
-              theme === "light"
-                ? "border-blue-400 scale-110"
-                : "border-gray-300"
-            }`}
-          />
-
-          <button
-            onClick={() => setTheme("glass")}
-            className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-br from-white/80 to-white/20 border transition-all cursor-pointer ${
-              theme === "glass"
-                ? "border-white scale-110"
-                : "border-white/20"
-            }`}
-          />
-
-          <button
-            onClick={() => setTheme("neon")}
-            className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-gradient-to-r from-emerald-400 to-green-500 border transition-all cursor-pointer ${
-              theme === "neon"
-                ? "border-emerald-300 scale-110"
-                : "border-transparent"
-            }`}
-          />
-
+    <div className='flex items-center justify-center px-2 py-4 sm:px-4 sm:py-6'>
+      <div className={`relative isolate flex flex-col overflow-hidden rounded-[1.75rem] border p-6 shadow-[0_28px_70px_-35px_rgba(15,35,26,0.65)] transition-colors duration-500  sm:p-7 ${current.bg} ${current.cardBorder}`}>
+        
+        <div className={`pointer-events-none absolute inset-0 -z-10 ${current.overlay}`} />
+        <div className='flex items-center justify-between gap-3'>
+          <div>
+            <p className={`text-[10px] font-bold tracking-[0.18em] ${current.sub}`}>VOICE AGENT</p>
+            <p className={`mt-1.5 text-sm font-semibold ${current.text}`}>Live preview</p>
           </div>
-
-          <div className='relative z-20 flex flex-col items-center justify-between h-full px-5 py-6 sm:px-7 sm:py-8'>
-
-           <div className='relative mt-1'>
-            <div className={`absolute inset-0 scale-[2] rounded-full blur-[80px] bg-gradient-to-r ${current.orb} opacity-60`}/>
-
-            <div className={`relative w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br ${current.orb} shadow-[0_0_120px_rgba(255,255,255,0.15)] animate-pulse before:absolute before:inset-0 before:rounded-full before:bg-white/20 before:blur-xl`}/>
-           </div>
-
-
-           <div className='text-center'>
-
-            <h2 className={`text-[20px] sm:text-[26px] md:text-[32px] font-semibold ${current.text}`}>
-              Hello! I'm Shifra AI
-            </h2>
-
-            <p className={`mt-4 text-[13px] sm:text-[15px] md:text-[16px] leading-6 sm:leading-7 max-w-[280px] mx-auto ${current.sub}`}>
-                Your smart voice assistant.
-              <br />
-              Ask anything about your website.
-            </p>
-
-
-            <div className='mt-6 sm:mt-8'>
-                <p className={`text-sm sm:text-base font-medium ${current.listening}`}>Listening...</p>
-
-                <div className='flex items-end justify-center gap-1 sm:gap-1.5 mt-3 sm:mt-4'>
-                    <span className={`w-1 h-3 rounded-full ${current.wave} animate-pulse`} />
-
-                <span className={`w-1 h-6 rounded-full ${current.wave} animate-pulse`} />
-
-                <span className={`w-1 h-2 rounded-full ${current.wave} animate-pulse`} />
-
-                <span className={`w-1 h-7 rounded-full ${current.wave} animate-pulse`} />
-
-                <span className={`w-1 h-4 rounded-full ${current.wave} animate-pulse`} />
-
-                <span className={`w-1 h-2 rounded-full ${current.wave} animate-pulse`} />
-                </div>
-
-            </div>
-           </div>
-
-
-           <div className='relative mb-1'>
-            <div className={`absolute inset-0 rounded-full blur-2xl opacity-60 ${current.wave}`}/>
-            <button className={`relative w-12 h-12 sm:w-15 sm:h-15 md:w-18 md:h-18 rounded-full bg-gradient-to-br ${current.button} ${current.micGlow} flex items-center justify-center`}>
-                <CiMicrophoneOn className="text-[#000000b9]" size={25}/>
-
-            </button>
-           </div>
-
-           
-          </div>
-            
+          <span className={`flex items-center gap-2 rounded-full border px-3 py-1.5 text-[9px] font-semibold tracking-[0.1em] ${current.cardBorder} ${current.sub}`}><i className='size-1.5 rounded-full bg-lime-400' /> ONLINE</span>
         </div>
-      
+
+        <div className='mt-3 flex flex-wrap  gap-2' role='group' aria-label='Preview assistant themes'>
+          {Object.entries(themes).map(([id, item]) => (
+            <button
+              key={id}
+              type='button'
+              onClick={() => setTheme(id)}
+              aria-label={`Use ${item.name} theme`}
+              aria-pressed={theme === id}
+              className={`flex min-h-7 items-center gap-2 rounded-full border px-2.5 text-[8px] font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-300 ${current.selector} ${theme === id ? current.active : current.inactive}`}
+            >
+              <span className={`size-2 rounded-full ${item.swatch}`} />{item.name}
+            </button>
+          ))}
+        </div>
+
+        <div className='relative mx-auto shrink-0 grid size-30  place-items-center sm:mt-6 '> 
+          <div className={`absolute inset-0 scale-125 rounded-full  border-4 bg-gradient-to-br opacity-35 blur-3xl transition-colors duration-500 motion-reduce:animate-none animate-pulse [animation-duration:4s] ${current.orb}`} />
+          <span aria-hidden='true' className={`absolute  inset-0 rounded-full border motion-reduce:animate-none animate-ping [animation-duration:3.2s] ${current.ring}`} />
+          <span aria-hidden='true' style={{ animationDelay: '1.6s' }} className={`absolute inset-0 rounded-full border motion-reduce:animate-none animate-ping [animation-duration:3.2s] ${current.ring}`} />
+          <div style={{ animationDuration: '4s' }} className={`relative size-24 rounded-full bg-gradient-to-br shadow-[inset_-10px_-12px_24px_rgba(20,39,31,0.22),inset_8px_8px_24px_rgba(255,255,255,0.48),0_16px_45px_rgba(20,39,31,0.2)] transition-colors duration-500 before:absolute before:inset-3 before:rounded-full before:border before:border-white/35 before:bg-white/15 before:content-[''] motion-reduce:animate-none animate-pulse sm:size-28 ${current.orb}`} />
+        </div>
+
+        <div className='mt-3 text-center'>
+          <h2 className={`font-[Manrope,sans-serif] text-2xl font-semibold sm:text-[1.7rem] ${current.text}`}>Hello! I'm Vox AI</h2>
+          <p className={`mx-auto mt-1 max-w-[280px] text-sm leading-6 ${current.sub}`}>Your smart voice assistant. Ask anything about your website.</p>
+          <div className={`mt-3 flex items-center justify-center gap-2 text-xs font-semibold ${current.listening}`}><span className={`size-1.5 rounded-full motion-reduce:animate-none animate-pulse ${current.wave}`} />Listening</div>
+          <div className='mt-3 flex h-7 items-center justify-center gap-1.5' aria-hidden='true'>
+            {[12, 22, 16, 28, 18, 24, 11, 20, 14].map((height, index) => <span key={index} className={`w-1 rounded-full opacity-80 motion-reduce:animate-none animate-pulse ${current.wave}`} style={{ height, animationDelay: `${index * 110}ms`, animationDuration: '1.1s' }} />)}
+          </div>
+        </div>
+
+        <div className='relative z-10 mx-auto mt-5 flex shrink-0 flex-col items-center gap-2'>
+          <div aria-hidden='true' className={`pointer-events-none absolute inset-x-1 top-0 mx-auto size-16 rounded-full opacity-35 blur-xl motion-reduce:animate-none animate-pulse ${current.wave}`} />
+
+          <button type='button' aria-label='Start voice conversation' className={`relative z-10 grid size-16 place-items-center rounded-full border-4 border-white/25 bg-gradient-to-br shadow-xl transition-transform hover:scale-105 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-lime-300 ${current.button} ${current.micGlow}`}>
+            <FaMicrophone className='text-[#14271f]' size={28} aria-hidden='true' />
+          </button>
+          <span className={`text-[9px] font-bold tracking-[0.18em] ${current.sub}`}>TAP TO TALK</span>
+        </div>
+      </div>
     </div>
   )
 }
