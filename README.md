@@ -245,8 +245,8 @@ Voice features depend on browser support. Gemini errors update the stored key st
 
 ## 👤 Author and Contact
 
-- **Name:** `<YOUR_NAME>`
-- **GitHub:** `<YOUR_GITHUB_PROFILE_URL>`
+- **Name:** `Sahil Kumar`
+- **GitHub:** `https://github.com/sahilkumar720`
 - **LinkedIn:** `<YOUR_LINKEDIN_PROFILE_URL>`
-- **Contact:** `<YOUR_EMAIL_OR_CONTACT_URL>`
+- **Contact:** `sahilkumar7369@gmail.com`
 
