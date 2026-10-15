@@ -6,7 +6,8 @@
     const script = document.currentScript;
 
     const userId = script?.dataset?.userId
-    const assetUrl = (file) => new URL(file, script?.src || window.location.href).href
+    
+    
 
     const theme = "dark"
 
@@ -19,7 +20,7 @@
 
     link.rel = "stylesheet"
 
-    link.href = assetUrl("assistant.css")
+    link.href = "https://voxai-r0fs.onrender.com/assistant.css"
 
     document.head.appendChild(link)
 
@@ -84,7 +85,7 @@
             <button class="shifra-mic">
 
                <img 
-               src="${assetUrl("mic.svg")}"
+               src="https://voxai-r0fs.onrender.com/mic.svg"
                alt="mic"
                class="shifra-mic-icon"/>
             </button>
@@ -103,7 +104,7 @@
 
     button.innerHTML = `
     <img 
-    src="${assetUrl("logo.png")}"
+    src="https://voxai-r0fs.onrender.com/logo.png"
     alt="logo"
     />`;
     document.body.appendChild(button)
