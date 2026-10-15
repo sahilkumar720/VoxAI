@@ -10,7 +10,7 @@ import axios from 'axios'
 import { Toaster } from 'react-hot-toast'
 
 export const ServerUrl = " https://voxaiserver.onrender.com"
-export const CLIENT_URL = "http://localhost:5173"
+export const CLIENT_URL = "https://voxai-r0fs.onrender.com"
 
 
 const App = () => {
