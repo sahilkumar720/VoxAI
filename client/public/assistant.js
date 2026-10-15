@@ -286,7 +286,7 @@
                 status.innerText = "Thinking...";
                 
 
-                const res = await fetch(" https://voxaiserver.onrender.com/api/assistant/ask" , {
+                const res = await fetch("https://voxaiserver.onrender.com/api/assistant/ask" , {
                     method:"POST",
                     headers:{
                         "Content-Type":
