@@ -9,7 +9,7 @@ import Billing from './pages/Billing'
 import axios from 'axios'
 import { Toaster } from 'react-hot-toast'
 
-export const ServerUrl = "http://localhost:8000"
+export const ServerUrl = " https://voxaiserver.onrender.com"
 export const CLIENT_URL = "http://localhost:5173"
 
 
