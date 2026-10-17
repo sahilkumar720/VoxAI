@@ -198,14 +198,10 @@ There is no server `start` or production script in the current `server/package.j
 
 ## 🌐 Deployment Notes
 
-Deployment to Vercel is planned, but no live deployment has been verified. Before deploying:
+Deployment on Render has done.
 
-- Replace the hard-coded `localhost` API URLs in `client/src/App.jsx` and `client/public/assistant.js`.
-- Update the server's CORS allowlist for the deployed client domain.
-- Remove the demo assistant script and fixed user ID from `client/index.html`.
-- Enable secure cookies for HTTPS and configure production environment variables.
-
-Repository: `<YOUR_GITHUB_REPOSITORY_URL>` · Demo: `<YOUR_LIVE_DEMO_URL>`
+Repository: `<YOUR_GITHUB_REPOSITORY_URL>` 
+Demo: `<YOUR_LIVE_DEMO_URL>`
 
 ## 🔌 API
 
