@@ -2,6 +2,10 @@
 
 > ✨ **Give every website a voice.** A configurable AI voice assistant for business websites.
 
+🌐 **Live Demo**: [https://voxai-r0fs.onrender.com](https://voxai-r0fs.onrender.com)  
+📂 **GitHub Repo**: [https://github.com/sahilkumar720/VoxAI](https://github.com/sahilkumar720/VoxAI)  
+📧 **Contact**: sahilkumar7369@gmail.com
+
 VoxAI is a MERN-style web application for building and embedding a voice-enabled assistant on a business website. Owners can configure the assistant's business profile, tone, appearance, and navigation targets. Visitors can ask questions by voice; the server sends a business-aware prompt to Gemini and can return either an AI response or a matching navigation action.
 
 The assistant uses browser speech recognition for voice input and browser speech synthesis for spoken replies. Gemini provides concise, context-aware answers based on the configured business information.
@@ -200,8 +204,8 @@ There is no server `start` or production script in the current `server/package.j
 
 Deployment on Render has done.
 
-Repository: `<YOUR_GITHUB_REPOSITORY_URL>` 
-Demo: `<YOUR_LIVE_DEMO_URL>`
+Repository: `https://github.com/sahilkumar720/VoxAI` 
+Demo: `https://voxai-r0fs.onrender.com`
 
 ## 🔌 API
 
